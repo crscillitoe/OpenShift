@@ -1,5 +1,5 @@
 .left-menu {
-  max-width: 6rem;
+  max-width: 5rem;
   height: 100%;
   background: #303030;
 
@@ -9,12 +9,19 @@
 }
 
 .left-button {
+  width: 0px;
   background: #3c3c3c;
-  margin: 10px;
   border-radius: 500px;
-  padding: 20px;
+  margin: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .left-button:hover {
   border-radius: 25px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
 }

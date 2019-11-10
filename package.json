@@ -7,8 +7,7 @@
     "name": "Christian Scillitoe",
     "email": "christian.scillitoe@gmail.com"
   },
-  "keywords": [
-  ],
+  "keywords": [],
   "main": "main.js",
   "private": true,
   "scripts": {
