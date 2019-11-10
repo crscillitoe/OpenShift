@@ -8,9 +8,13 @@
   justify-content: flex-end;
 }
 
-#add-button {
+.left-button {
   background: #3c3c3c;
   margin: 10px;
   border-radius: 500px;
   padding: 20px;
+}
+
+.left-button:hover {
+  border-radius: 25px;
 }
