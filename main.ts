@@ -21,6 +21,7 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true,
     },
+    titleBarStyle: 'hidden'
   });
 
   if (serve) {

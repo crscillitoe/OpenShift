@@ -20,6 +20,8 @@ import { AppComponent } from './app.component';
 import { LeftMenuComponent } from './left-menu/left-menu.component';
 import { MaterialModule } from './material/material.module';
 
+import { DeviceDetectorModule } from 'ngx-device-detector';
+
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -32,6 +34,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FormsModule,
     HttpClientModule,
     CoreModule,
+    DeviceDetectorModule.forRoot(),
     SharedModule,
     MaterialModule,
     HomeModule,
