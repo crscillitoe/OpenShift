@@ -1,7 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
 /* You can add global styles to this file, and also import other style files */
 html, body {
   margin: 0;
   padding: 0;
 
   height: 100%;
+}
+
+* {
+  font-family: 'Roboto Mono', monospace;
 }

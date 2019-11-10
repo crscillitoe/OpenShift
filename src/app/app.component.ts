@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ElectronService } from './core/services';
 import { TranslateService } from '@ngx-translate/core';
+import { Titlebar, Color } from 'custom-electron-titlebar'
 import { AppConfig } from '../environments/environment';
 
 @Component({
@@ -21,6 +22,12 @@ export class AppComponent {
       console.log('Mode electron');
       console.log('Electron ipcRenderer', electronService.ipcRenderer);
       console.log('NodeJS childProcess', electronService.childProcess);
+
+      new Titlebar({
+        backgroundColor: Color.fromHex('#303030'),
+        menu: null,
+        titleHorizontalAlignment: 'left'
+      });
     } else {
       console.log('Mode web');
     }
