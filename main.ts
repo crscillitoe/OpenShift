@@ -19,10 +19,24 @@ function createWindow() {
     height: 800,
     frame: false,
     webPreferences: {
+      webviewTag: true,
       nodeIntegration: true,
     },
     titleBarStyle: 'hidden'
   });
+
+  // let onHeadersReceived = (request: any, callback: any) => {
+  //   if (request.responseHeaders['X-Frame-Options'] || request.responseHeaders['x-frame-options']) {
+  //     console.log(request.responseHeaders['X-Frame-Options']);
+  //     console.log(request.responseHeaders['x-frame-options']);
+  //     delete request.responseHeaders['X-Frame-Options'];
+  //     delete request.responseHeaders['x-frame-options'];
+  //   }
+
+  //   callback({cancel: false, responseHeaders: request.responseHeaders});
+  // }
+
+  // (win as BrowserWindow).webContents.session.webRequest.onHeadersReceived(onHeadersReceived);
 
   if (serve) {
     require('electron-reload')(__dirname, {
@@ -42,6 +56,7 @@ function createWindow() {
     // Dereference the window object, usually you would store window
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
+    win.removeAllListeners();
     win = null;
   });
 
