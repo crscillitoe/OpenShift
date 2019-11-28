@@ -36,6 +36,11 @@ export class LeftMenuComponent implements OnInit {
 
   ngOnInit() {}
 
+  /**
+   * Called when the user drops an item from the drag-drop
+   * in the left menu. Can reorder the application list.
+   * @param event
+   */
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(
       this.applicationList,
@@ -46,6 +51,12 @@ export class LeftMenuComponent implements OnInit {
     this.configurationService.setApplicationList(this.applicationList);
   }
 
+  /**
+   * Called when the user right clicks on a configured
+   * application on the left panel. Opens the editMenu.
+   * @param event MouseEvent data used to position the menu
+   * @param application Application being edited
+   */
   openContextMenu(event: MouseEvent, application: Application) {
     event.preventDefault();
     this.contextMenuPosition.x = event.clientX + "px";
@@ -55,15 +66,30 @@ export class LeftMenuComponent implements OnInit {
     this.editApplicationMenu.openMenu();
   }
 
+  /**
+   * Selects the given application, this will cause the UI
+   * in the right panel to render the UI related to this application.
+   * @param application The application to select
+   */
   selectApplication(application: Application) {
     this.configurationService.selectApplication(application);
   }
 
+  /**
+   * Removes the given application from the shift left menu
+   * @param application The application to remove from the system
+   */
   removeApplication(application: Application) {
     this.configurationService.removeApplication(application);
   }
 
-  addApplication() {
+  /**
+   * Opens the modal that allows the user to enter
+   * a new application into their system. If they
+   * enter one, this function will send it to the
+   * configuration service for storage.
+   */
+  openAddApplicationModal() {
     const dialogRef = this.dialog.open(AddApplicationComponent);
 
     dialogRef.afterClosed().subscribe((application: Application) => {
