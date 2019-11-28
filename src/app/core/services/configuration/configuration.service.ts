@@ -53,9 +53,9 @@ export class ConfigurationService {
    * @param applicationID The id of the application to remove
    * @return boolean true on success, false on failure
    */
-  removeApplication(applicationID: number): void {
+  removeApplication(application: Application): void {
     for (let i = 0; i < this._applicationList.length; i++) {
-      if (this._applicationList[i].applicationID === applicationID) {
+      if (this._applicationList[i] === application) {
         this._applicationList.splice(i, 1);
       }
     }
@@ -70,7 +70,6 @@ export class ConfigurationService {
 }
 
 export interface Application {
-  applicationID: number;
   applicationURL: string;
   applicationName: string;
 }

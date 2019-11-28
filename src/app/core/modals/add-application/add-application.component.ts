@@ -8,7 +8,6 @@ import { Application } from "../../services/configuration/configuration.service"
   styleUrls: ["./add-application.component.scss"]
 })
 export class AddApplicationComponent implements OnInit {
-  applicationID: number;
   applicationName: string;
   applicationURL: string;
 
@@ -20,7 +19,6 @@ export class AddApplicationComponent implements OnInit {
 
   save() {
     const application: Application = {
-      applicationID: this.applicationID,
       applicationName: this.applicationName,
       applicationURL: this.applicationURL
     };
