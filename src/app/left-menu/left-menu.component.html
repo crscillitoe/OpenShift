@@ -1,6 +1,10 @@
 <div cdkDropList class="left-menu list" (cdkDropListDropped)="drop($event)">
   <ng-container *ngFor="let application of applicationList">
-    <div class="center box" cdkDrag>
+    <div
+      class="center box"
+      (contextmenu)="openContextMenu($event, application)"
+      cdkDrag
+    >
       <button
         mat-button
         color="accent"
@@ -25,3 +29,16 @@
     </button>
   </div>
 </div>
+
+<div
+  style="visibility: hidden; position: fixed"
+  [style.left]="contextMenuPosition.x"
+  [style.top]="contextMenuPosition.y"
+  [matMenuTriggerFor]="editApplicationMenu"
+></div>
+
+<mat-menu #editApplicationMenu>
+  <ng-template matMenuContent let-item="item">
+    <button mat-menu-item (click)="removeApplication(item)">Remove</button>
+  </ng-template>
+</mat-menu>
