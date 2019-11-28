@@ -6,6 +6,7 @@ import { MatDialogModule } from "@angular/material/dialog";
 import { MatInputModule } from "@angular/material/input";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatMenuModule } from "@angular/material/menu";
+import { MatBadgeModule } from "@angular/material/badge";
 
 @NgModule({
   declarations: [],
@@ -13,6 +14,7 @@ import { MatMenuModule } from "@angular/material/menu";
   exports: [
     MatIconModule,
     MatButtonModule,
+    MatBadgeModule,
     MatMenuModule,
     MatDialogModule,
     MatInputModule,
