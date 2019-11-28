@@ -43,6 +43,10 @@ export class ConfigurationService {
     this.updateLocalApplicationList();
   }
 
+  /**
+   * Sets the application list to the given application list.
+   * @param applications New application list
+   */
   setApplicationList(applications: Application[]): void {
     this._applicationList = applications;
     this.updateLocalApplicationList();
