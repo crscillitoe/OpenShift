@@ -1,8 +1,24 @@
 <div class="left-menu">
-  <div class="center">
-    <button mat-button
+  <ng-container *ngFor="let application of applicationList">
+    <div class="center">
+      <button
+        mat-button
+        color="accent"
+        class="left-button"
+        (click)="selectApplication(application)"
+      >
+        {{ application.applicationName.charAt(0) }}
+      </button>
+    </div>
+  </ng-container>
+
+  <div class="center bottom">
+    <button
+      mat-button
+      (click)="addApplication()"
       color="accent"
-      class="left-button bottom">
+      class="left-button"
+    >
       <mat-icon>
         add
       </mat-icon>

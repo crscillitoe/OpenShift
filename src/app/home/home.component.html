@@ -1,10 +1,21 @@
 <div class="container">
-  <!-- <h1 class="title">
-    <mat-icon>
-      chevron_left
-    </mat-icon>
-    Select an Application
-  </h1> -->
+  <ng-container *ngIf="!selectedApplication">
+    <h1 class="title">
+      <mat-icon>
+        chevron_left
+      </mat-icon>
+      Select an Application
+    </h1>
+  </ng-container>
 
-  <webview class="full" src="https://discordapp.com/channels/@me" partition="persist:discord"></webview>
+  <ng-container *ngFor="let application of applicationList">
+    <webview
+      [ngClass]="{
+        full: application.applicationID === selectedApplication.applicationID,
+        hidden: application.applicationID !== selectedApplication.applicationID
+      }"
+      attr.src="{{ application.applicationURL }}"
+      attr.partition="persist:{{ application.applicationName }}"
+    ></webview>
+  </ng-container>
 </div>
