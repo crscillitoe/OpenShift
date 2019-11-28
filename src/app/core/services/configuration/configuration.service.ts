@@ -43,6 +43,11 @@ export class ConfigurationService {
     this.updateLocalApplicationList();
   }
 
+  setApplicationList(applications: Application[]): void {
+    this._applicationList = applications;
+    this.updateLocalApplicationList();
+  }
+
   /**
    * Removes the given application from the system.
    * @param applicationID The id of the application to remove
@@ -58,7 +63,7 @@ export class ConfigurationService {
     this.updateLocalApplicationList();
   }
 
-  updateLocalApplicationList() {
+  private updateLocalApplicationList(): void {
     this.applicationList.next(this._applicationList);
     this.persistenceService.setApplicationList(this._applicationList);
   }

@@ -1,6 +1,6 @@
-<div class="left-menu">
+<div cdkDropList class="left-menu list" (cdkDropListDropped)="drop($event)">
   <ng-container *ngFor="let application of applicationList">
-    <div class="center">
+    <div class="center box" cdkDrag>
       <button
         mat-button
         color="accent"

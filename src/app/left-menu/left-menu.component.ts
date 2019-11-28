@@ -5,6 +5,7 @@ import {
   Application,
   ConfigurationService
 } from "../core/services/configuration/configuration.service";
+import { moveItemInArray, CdkDragDrop } from "@angular/cdk/drag-drop";
 
 @Component({
   selector: "left-menu",
@@ -28,6 +29,16 @@ export class LeftMenuComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(
+      this.applicationList,
+      event.previousIndex,
+      event.currentIndex
+    );
+
+    this.configurationService.setApplicationList(this.applicationList);
+  }
 
   selectApplication(application: Application) {
     this.configurationService.selectApplication(application);
