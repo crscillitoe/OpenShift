@@ -11,8 +11,8 @@
   <ng-container *ngFor="let application of applicationList">
     <webview
       [ngClass]="{
-        full: application.applicationID === selectedApplication.applicationID,
-        hidden: application.applicationID !== selectedApplication.applicationID
+        full: application === selectedApplication,
+        hidden: application !== selectedApplication
       }"
       attr.src="{{ application.applicationURL }}"
       attr.partition="persist:{{ application.applicationName }}"
