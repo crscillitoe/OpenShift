@@ -22,6 +22,7 @@ import { MaterialModule } from "./material/material.module";
 
 import { DeviceDetectorModule } from "ngx-device-detector";
 import { AddApplicationComponent } from "./core/modals/add-application/add-application.component";
+import { NgxElectronModule } from "ngx-electron";
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -35,6 +36,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserAnimationsModule,
     HttpClientModule,
     CoreModule,
+    NgxElectronModule,
     DeviceDetectorModule.forRoot(),
     SharedModule,
     MaterialModule,

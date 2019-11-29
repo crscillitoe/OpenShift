@@ -9,13 +9,13 @@
   </ng-container>
 
   <ng-container *ngFor="let application of applicationList">
-    <webview
+    <embedded-app
       [ngClass]="{
         full: application === selectedApplication,
         hidden: application !== selectedApplication
       }"
-      attr.src="{{ application.applicationURL }}"
-      attr.partition="persist:{{ application.applicationName }}"
-    ></webview>
+      [src]="application.applicationURL"
+      [partition]="'persist:' + application.applicationName"
+    ></embedded-app>
   </ng-container>
 </div>
