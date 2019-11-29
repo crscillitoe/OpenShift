@@ -24,19 +24,6 @@ function createWindow() {
     titleBarStyle: "hidden"
   });
 
-  // let onHeadersReceived = (request: any, callback: any) => {
-  //   if (request.responseHeaders['X-Frame-Options'] || request.responseHeaders['x-frame-options']) {
-  //     console.log(request.responseHeaders['X-Frame-Options']);
-  //     console.log(request.responseHeaders['x-frame-options']);
-  //     delete request.responseHeaders['X-Frame-Options'];
-  //     delete request.responseHeaders['x-frame-options'];
-  //   }
-
-  //   callback({cancel: false, responseHeaders: request.responseHeaders});
-  // }
-
-  // (win as BrowserWindow).webContents.session.webRequest.onHeadersReceived(onHeadersReceived);
-
   if (serve) {
     require("electron-reload")(__dirname, {
       electron: require(`${__dirname}/node_modules/electron`)
